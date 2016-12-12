@@ -28,7 +28,7 @@ public class DAOimplMySQL implements DAO{
         }
         try(Connection result=(Connection) DriverManager.getConnection(host, login, password)){
             Statement s=(Statement) result.createStatement();
-            s.execute("CREATE TABLE IF NOT EXISTS `"+url+"`(id INT AUTO_INCREMENT PRIMARY KEY, tag VARCHAR(100), value VARCHAR(500)) CHARACTER SET utf8;");
+            s.execute("CREATE TABLE IF NOT EXISTS `"+url+"`(id INT AUTO_INCREMENT PRIMARY KEY, tag VARCHAR(200), value VARCHAR(1500)) CHARACTER SET utf8;");
             String sqlStatement="";
             for(Tag t:tags)
                 sqlStatement+="('"+t.getName()+"','"+t.getValue()+"'),";
